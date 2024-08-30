@@ -1,0 +1,73 @@
+paths:
+  /customers/{customerId}/orders:
+    get:
+      summary: "Obtenir la liste des commandes d'un client spécifique"
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: "Liste des commandes du client"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+
+    post:
+      summary: "Créer une nouvelle commande pour un client spécifique"
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: "Commande créée avec succès"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+
+  /customers/{customerId}/orders/{orderId}:
+    put:
+      summary: "Modifier une commande spécifique pour un client"
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - in: path
+          name: orderId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          description: "Commande modifiée avec succès"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'

@@ -1,0 +1,10 @@
+PUT : Remplace toute la ressource. Utilisé pour mettre à jour tous les champs. Si un champ est manquant, il peut être supprimé ou réinitialisé.
+Exemple : Mettre à jour un client avec id, name, et age.
+
+
+PATCH : Modifie partiellement la ressource. Utilisé pour mettre à jour seulement certains champs. Les champs non spécifiés restent inchangés.
+Exemple : Modifier uniquement age d'un client sans toucher au name.
+Utilisation :
+
+PUT : Pour remplacer entièrement.
+PATCH : Pour modifier partiellement.

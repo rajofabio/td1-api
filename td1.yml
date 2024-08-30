@@ -4,20 +4,20 @@ info:
   version: 1.0.0
 
 servers:
-  - url: https://localhost.std230106.com
+  - url: https://localhost.std230106k.com
 
 paths:
   /customers:
     get:
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Customer'
+                  $ref: "#/components/schemas/Customer"
 
 components:
   schemas:
